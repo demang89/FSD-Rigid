@@ -133,7 +133,7 @@ for i in range(nagg):
   brownian.gamma['agg'+str(i)]= tau
   brownian.gamma_r['agg'+str(i)]=gamma_r
 
-integrator=hoomd.md.Integrator(dt=dt,forces=[morse],methods=[brownian],integrate_rotational_dof=True,rigid=rigid)
+integrator=hoomd.md.Integrator(dt=dt,forces=[dlvo],methods=[brownian],integrate_rotational_dof=True,rigid=rigid)
 sim.operations.integrator = integrator
 
 gsd_writer = hoomd.write.GSD(filename='lattice.gsd',trigger=nframe,filter=all_,dynamic=['property','momentum','attribute'],mode='wb')
